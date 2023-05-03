@@ -1,8 +1,12 @@
 package com.daofab.exercise.transaction;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -12,10 +16,11 @@ import java.util.List;
 @RestController
 public class TransactionController implements TransactionApi{
 
-    private final TransactionService transactionService;
+    @Autowired
+    public TransactionService transactionService;
 
     @Override
-    public ResponseEntity<List<Transaction>> getTransactions(int page, long sortField) {
-        return transactionService.getTransaction(page, sortField);
+    public ResponseEntity<Page<Transaction>> getTransactions(int page, int size,  String sort) {
+        return  ResponseEntity.ok(transactionService.getTransaction(page, 2, sort));
     }
 }

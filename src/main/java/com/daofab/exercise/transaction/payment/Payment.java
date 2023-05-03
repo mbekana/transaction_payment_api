@@ -6,15 +6,13 @@ import lombok.Data;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity(name = "ChildTransaction")
-@Table(name = "payments")
+//@Entity(name = "ChildTransaction")
+//@Table(name = "payments")
 @Data
 public class Payment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parent_id")
-    private Transaction parent;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long parentId;
     private BigDecimal paidAmount;
 }
