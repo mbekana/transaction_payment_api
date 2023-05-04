@@ -1,4 +1,4 @@
-package com.daofab.exercise.transaction.payment;
+package com.daofab.exercise.transaction;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PaymentDto {
+public class TransactionDto {
     private Long id;
     private String sender;
     private String receiver;
     private BigDecimal totalAmount;
-    private BigDecimal paidAmount;
+    private BigDecimal paidTotalAmount;
 }

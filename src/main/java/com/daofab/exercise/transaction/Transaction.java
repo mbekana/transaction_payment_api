@@ -17,17 +17,15 @@ public class Transaction {
     private String sender;
     private String receiver;
     private BigDecimal totalAmount;
-    private BigDecimal totalPaidAmount;
+
 
     public Transaction(@JsonProperty("id") Long id,
                        @JsonProperty("sender") String sender,
                        @JsonProperty("receiver") String receiver,
-                       @JsonProperty("totalAmount") BigDecimal totalAmount,
-                       @JsonProperty("totalPaidAmount") BigDecimal totalPaidAmount) {
+                       @JsonProperty("totalAmount") BigDecimal totalAmount) {
         this.id = id;
         this.sender = sender;
         this.receiver = receiver;
         this.totalAmount = totalAmount;
-        this.totalPaidAmount = totalPaidAmount;
     }
 }

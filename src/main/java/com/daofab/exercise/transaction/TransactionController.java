@@ -20,7 +20,7 @@ public class TransactionController implements TransactionApi{
     public TransactionService transactionService;
 
     @Override
-    public ResponseEntity<Page<Transaction>> getTransactions(int page, int size,  String sort) {
+    public ResponseEntity<Page<TransactionDto>> getTransactions(int page, int size,  String sort) {
         return  ResponseEntity.ok(transactionService.getTransaction(page, 2, sort));
     }
 }
